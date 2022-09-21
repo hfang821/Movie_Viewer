@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { getMovies, createMovie, updateMovie, deleteMovie} from '../utils/API';
+import Nav from '../components/NavBar';
+import Content from '../components/Content';
 
 export default function Main() {
 
     return (
-        <h1>Hello World!</h1>
+        <section className="main">
+            <Nav />
+            <Content />
+        </section>
+
     )
 }
+ 
