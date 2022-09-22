@@ -5,7 +5,13 @@ module.exports = {
     getAllMovies(req, res){
         Movie.find({})
         .select('-__v')
-        .then(dbMovieData => res.json(dbMovieData))
+        .then(dbMovieData => {
+            if(!dbMovieData){
+                res.status(404).json({message: 'No movies yet.'});
+                return;
+            }
+            res.json(dbMovieData);
+        })
         .catch(err=>{
             console.log(err);
             res.status(400).json(err);

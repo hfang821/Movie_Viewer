@@ -2,8 +2,12 @@ export const getMovies = () => {
   return fetch("/api/movies", {
     headers: {
       "Content-Type": "application/json",
-    },
-  });
+    }
+  })
+  .then(response => {
+     response.json();
+     console.log(response);
+}) 
 };
 
 export const createMovie = (dbMovieData) => {

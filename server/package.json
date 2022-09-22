@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
     "express": "^4.17.2",
     "graphql": "^16.2.0",
     "mongoose": "^6.1.6"
