@@ -21,7 +21,18 @@ export default function PopUp(props){
 
     const handleFormSubmit = () => {
         console.log(movie,year,director)
-        axios
+        if(props.addMovie){
+            axios
+            .post(`${props.baseUrl}`, {
+                Title: movie,
+                Year: year,
+                Director: director
+            }).then(() => {
+                alert("Movie has been added.");
+                window.location.reload();
+            })
+        } else {
+            axios
             .put(`${props.baseUrl}${props.movieId}`, {
                 Title: movie,
                 Year: year,
@@ -29,6 +40,7 @@ export default function PopUp(props){
             }).then(() => {
                 alert("Movie has been changed.");
             })
+        }
     }
 
     return (props.trigger) ? (

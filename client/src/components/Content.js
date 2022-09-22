@@ -54,7 +54,8 @@ export default function Content() {
     const [movies, setMovies] = useState('');
     const [buttonPopUp, setButtonPopUp] = useState(false);
     const [movieId, setMovieId] =useState('');
-    
+    const [addMovie,setAddMovie] = useState(false);
+
     //Get request
     React.useEffect(() => {
       axios.get(baseURL).then((response) => {
@@ -70,17 +71,20 @@ export default function Content() {
       console.log(id);
       axios.delete(`${baseURL}${id}`)
           .then(() => {
-            alert("Movie has been deleted.");
+            //Temporarily using this approach (Will switch to delete and show later)
+            window.location.reload();
           })
-      //Temporarily using this approach (Will switch to delete and show later)
-      window.location.reload();
     }
 
-
+    //Post request
+    const handleAddMovie = () => {
+      setAddMovie(true);
+      setButtonPopUp(true);
+    }
 
     return (
         <div style={{marginTop: '-103px'}}>
-        <FontAwesomeIcon icon={faSquarePlus} style={{color:'white', margin:'-39px 2000px 11px 14px', paddingBottom:'3px', fontSize:'35px'}}></FontAwesomeIcon>
+
         <TableContainer component={Paper}>
         <Table sx={{ minWidth: 200 }} aria-label="customized table">
             <TableHead>
@@ -104,9 +108,11 @@ export default function Content() {
                 <StyledTableCell>
                     <button type="button" onClick={() => handleDelete(movie._id)}><FontAwesomeIcon icon={faTrashCan} style={{color:'white', margin:'0 60px 0 0', paddingBottom:'3px', fontSize:'25px'}}></FontAwesomeIcon></button>
                     <button type="button" onClick={()=> {
+                      setAddMovie(false);
                       setButtonPopUp(true);
                       setMovieId(movie._id);
-                      }}><FontAwesomeIcon icon={faPenToSquare} style={{color:'white', margin:'0 60px 0 0', paddingBottom:'3px', fontSize:'25px'}}></FontAwesomeIcon></button>
+                      }}><FontAwesomeIcon icon={faPenToSquare} style={{color:'white', margin:'0 60px 0 0', paddingBottom:'3px', fontSize:'25px'}}></FontAwesomeIcon>
+                    </button>
                 </StyledTableCell>
                 </StyledTableRow>
             ))}
@@ -114,10 +120,16 @@ export default function Content() {
         </Table>
         </TableContainer>
 
-        <PopUp trigger={buttonPopUp} setTrigger={setButtonPopUp} baseUrl={baseURL} movieId={movieId}>
+        <button onClick={()=> {
+            handleAddMovie();
+        }}>
+          <FontAwesomeIcon icon={faSquarePlus} style={{color:'white', margin:'-60px 1987px -28px 2px', paddingBottom:'3px', fontSize:'35px'}}></FontAwesomeIcon>
+        </button>
+
+        <PopUp trigger={buttonPopUp} setTrigger={setButtonPopUp} baseUrl={baseURL} movieId={movieId} addMovie={addMovie}>
           <div style={{display: "flex"}}>
             <FontAwesomeIcon icon={faPenToSquare} style={{color:'#FF9C07', margin:'0 10px 0 0', paddingBottom:'3px', fontSize:'50px'}}></FontAwesomeIcon>
-            <h1 style={{color: "white", marginTop:"9px"}}>Need to Change?</h1>
+            <h1 style={{color: "white", marginTop:"9px"}}>Need to {addMovie ? 'Add a Movie': 'Change'}?</h1>
           </div>
         </PopUp>
         </div>
