@@ -1,6 +1,15 @@
 # Movie_Viewer
 Full-Stack application that helps friends and family to add/update their list of favourite movies with only a few clicks.
 
+## How to Install:
+* Open Gitbash/terminal, navigate towards your project location from your root by using "cd ./ project location"
+* Choose a clone option from the "Movie_Viewer" repository (either HTTPS or SSH should work)
+* In Gitbash, type "git clone HTTPS or SSH"
+* Once the clone is successful, navigate to the root directory of this repo.
+* Enter `npm run install` into the terminal to install all dependencies linked in the `package.json` file (both client and server sides).
+
+## How to Use:
+* type `npm run develop` in your gitbash shell and the react app would be automatically opened.
 # Wireframes:
 The link to the wireframe can be found here: 
 https://www.figma.com/file/l7hUTdAzNBUkyoe1Wkie2d/Movie-Viewer-Project?node-id=0%3A1
@@ -32,16 +41,6 @@ https://www.figma.com/file/l7hUTdAzNBUkyoe1Wkie2d/Movie-Viewer-Project?node-id=0
 2. Work on the CRUD api calls at the backend controller files and test them in Insomnia.
 3. Once routes on backend are tested, go to frontend JS files (react) and connect the APIs from backend to the frontend elements using react states and conditional rendering.
 4. Styling (CSS & Material UI).
-
-## How to Install:
-* Open Gitbash/terminal, navigate towards your project location from your root by using "cd ./ project location"
-* Choose a clone option from the "Movie_Viewer" repository (either HTTPS or SSH should work)
-* In Gitbash, type "git clone HTTPS or SSH"
-* Once the clone is successful, navigate to the root directory of this repo.
-* Enter `npm run install` into the terminal to install all dependencies linked in the `package.json` file (both client and server sides).
-
-## How to Use:
-* type `npm run develop` in your gitbash shell and the react app would be automatically opened.
 
 ## Future Improvement
 1. Include a hamberger button in the Nav bar for linking to other pages.
