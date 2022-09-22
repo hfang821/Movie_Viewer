@@ -16,7 +16,6 @@ import {
   faPenToSquare,
   faSquarePlus,
 } from "@fortawesome/free-solid-svg-icons";
-// import { getMovies, createMovie, updateMovie, deleteMovie} from '../utils/API';
 
 const baseURL = process.env.baseURL || "http://localhost:3001/api/movies/";
 
@@ -48,7 +47,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(even)": {
     backgroundColor: customTheme.palette.secondary.main,
   },
-  // hide last border
   "&:last-child td, &:last-child th": {
     border: 0,
   },
@@ -68,11 +66,9 @@ export default function Content() {
   }, []);
 
   if (!movies) return null;
-  console.log(movies);
 
   //Delete request
   const handleDelete = (id) => {
-    console.log(id);
     axios.delete(`${baseURL}${id}`).then(() => {
       //Temporarily using this approach (Will switch to delete and show later)
       window.location.reload();

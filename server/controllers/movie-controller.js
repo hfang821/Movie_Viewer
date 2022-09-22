@@ -12,7 +12,6 @@ module.exports = {
         res.json(dbMovieData);
       })
       .catch((err) => {
-        console.log(err);
         res.status(400).json(err);
       });
   },

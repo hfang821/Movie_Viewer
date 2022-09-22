@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState } from "react";
 
 export default function PopUp(props) {
-  console.log(props);
   const [movie, setMovie] = useState("");
   const [year, setYear] = useState("");
   const [director, setDirector] = useState("");
@@ -20,7 +19,6 @@ export default function PopUp(props) {
   };
 
   const handleFormSubmit = () => {
-    console.log(movie, year, director);
     if (props.addMovie) {
       axios
         .post(`${props.baseUrl}`, {
