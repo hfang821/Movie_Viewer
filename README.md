@@ -42,6 +42,10 @@ https://www.figma.com/file/l7hUTdAzNBUkyoe1Wkie2d/Movie-Viewer-Project?node-id=0
 3. Once routes on backend are tested, go to frontend JS files (react) and connect the APIs from backend to the frontend elements using react states and conditional rendering.
 4. Styling (CSS & Material UI).
 
+Demonstration of the Project Management:
+![image](https://user-images.githubusercontent.com/95199209/191850709-7d0efeec-073a-4f23-a28d-a6c7d9b3700e.png)
+
+
 ## Future Improvement
 1. Include a hamberger button in the Nav bar for linking to other pages.
 2. Develop a "Contact" page for any technical issue.
