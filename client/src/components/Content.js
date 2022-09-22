@@ -14,7 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faPenToSquare, faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 // import { getMovies, createMovie, updateMovie, deleteMovie} from '../utils/API';
 
-const baseURL = "http://localhost:3001/api/movies/";
+const baseURL = process.env.baseURL || "http://localhost:3001/api/movies/";
 
 const customTheme = createTheme({
     palette:{
