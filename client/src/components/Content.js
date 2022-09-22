@@ -89,22 +89,22 @@ export default function Content() {
         <Table sx={{ minWidth: 200 }} aria-label="customized table">
             <TableHead>
             <TableRow style={{maxHeight: "20%"}}>
-                <StyledTableCell style={{backgroundColor: "#BA2B2B", fontWeight: "bolder"}}>Number</StyledTableCell>
-                <StyledTableCell style={{backgroundColor: "#BA2B2B", fontWeight: "bolder"}}>Movie Name</StyledTableCell>
-                <StyledTableCell style={{backgroundColor: "#BA2B2B", fontWeight: "bolder"}}>Year</StyledTableCell>
-                <StyledTableCell style={{backgroundColor: "#BA2B2B", fontWeight: "bolder"}}>Director</StyledTableCell>
-                <StyledTableCell style={{backgroundColor: "#BA2B2B", fontWeight: "bolder"}}>Actions</StyledTableCell>
+                <StyledTableCell style={{backgroundColor: "#BA2B2B", fontWeight: "bolder", fontFamily: 'Montserrat'}}>Number</StyledTableCell>
+                <StyledTableCell style={{backgroundColor: "#BA2B2B", fontWeight: "bolder", fontFamily: 'Montserrat'}}>Movie Name</StyledTableCell>
+                <StyledTableCell style={{backgroundColor: "#BA2B2B", fontWeight: "bolder", fontFamily: 'Montserrat'}}>Year</StyledTableCell>
+                <StyledTableCell style={{backgroundColor: "#BA2B2B", fontWeight: "bolder", fontFamily: 'Montserrat'}}>Director</StyledTableCell>
+                <StyledTableCell style={{backgroundColor: "#BA2B2B", fontWeight: "bolder", fontFamily: 'Montserrat'}}>Actions</StyledTableCell>
             </TableRow>
             </TableHead>
             <TableBody>
             {movies.map((movie) => (
                 <StyledTableRow >
-                <StyledTableCell component="th" scope="row">
+                <StyledTableCell component="th" scope="row" style={{fontFamily: 'Montserrat'}}>
                 {movies.indexOf(movie)+1}
                 </StyledTableCell>
-                <StyledTableCell>{movie.Title}</StyledTableCell>
-                <StyledTableCell>{movie.Year}</StyledTableCell>
-                <StyledTableCell>{movie.Director}</StyledTableCell>
+                <StyledTableCell style={{fontFamily: 'Montserrat'}}>{movie.Title}</StyledTableCell>
+                <StyledTableCell style={{fontFamily: 'Montserrat'}}>{movie.Year}</StyledTableCell>
+                <StyledTableCell style={{fontFamily: 'Montserrat'}}>{movie.Director}</StyledTableCell>
                 <StyledTableCell>
                     <button type="button" onClick={() => handleDelete(movie._id)}><FontAwesomeIcon icon={faTrashCan} style={{color:'white', margin:'0 60px 0 0', paddingBottom:'3px', fontSize:'25px'}}></FontAwesomeIcon></button>
                     <button type="button" onClick={()=> {
