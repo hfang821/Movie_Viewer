@@ -1,9 +1,6 @@
 # Movie_Viewer
 Full-Stack application that helps friends and family to add/update their list of favourite movies with only a few clicks.
 
-# Heroku Deployment:
-https://movieviewerngen.herokuapp.com/
-
 # Wireframes:
 The link to the wireframe can be found here: 
 https://www.figma.com/file/l7hUTdAzNBUkyoe1Wkie2d/Movie-Viewer-Project?node-id=0%3A1
@@ -41,11 +38,10 @@ https://www.figma.com/file/l7hUTdAzNBUkyoe1Wkie2d/Movie-Viewer-Project?node-id=0
 * Enter `npm run install` into the terminal to install all dependencies linked in the `package.json` file (both client and server sides).
 
 ## How to Use:
-1. Cloud: Open the deployed heroku link, the project is hosted on the cloud and ready to be used!
-
-2. Local Machine: type `npm run develop` in your gitbash shell and the react app would be automatically opened.
+* type `npm run develop` in your gitbash shell and the react app would be automatically opened.
 
 ## Future Improvement
 1. Include a hamberger button in the Nav bar for linking to other pages.
 2. Develop a "Contact" page for any technical issue.
 3. Styles on buttons. (Hovering effects, etc)
+4. Deploy on a Hosting Platform (Heroku, AWS Or Netlify)
