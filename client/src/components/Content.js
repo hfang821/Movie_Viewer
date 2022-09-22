@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import PopUp from './PopUp';
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -51,7 +52,9 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 export default function Content() {
     const [movies, setMovies] = useState('');
-
+    const [buttonPopUp, setButtonPopUp] = useState(false);
+    const [movieId, setMovieId] =useState('');
+    
     //Get request
     React.useEffect(() => {
       axios.get(baseURL).then((response) => {
@@ -72,6 +75,8 @@ export default function Content() {
       //Temporarily using this approach (Will switch to delete and show later)
       window.location.reload();
     }
+
+
 
     return (
         <div style={{marginTop: '-103px'}}>
@@ -98,13 +103,23 @@ export default function Content() {
                 <StyledTableCell>{movie.Director}</StyledTableCell>
                 <StyledTableCell>
                     <button type="button" onClick={() => handleDelete(movie._id)}><FontAwesomeIcon icon={faTrashCan} style={{color:'white', margin:'0 60px 0 0', paddingBottom:'3px', fontSize:'25px'}}></FontAwesomeIcon></button>
-                    <button><FontAwesomeIcon icon={faPenToSquare} style={{color:'white', margin:'0 60px 0 0', paddingBottom:'3px', fontSize:'25px'}}></FontAwesomeIcon></button>
+                    <button type="button" onClick={()=> {
+                      setButtonPopUp(true);
+                      setMovieId(movie._id);
+                      }}><FontAwesomeIcon icon={faPenToSquare} style={{color:'white', margin:'0 60px 0 0', paddingBottom:'3px', fontSize:'25px'}}></FontAwesomeIcon></button>
                 </StyledTableCell>
                 </StyledTableRow>
             ))}
             </TableBody>
         </Table>
         </TableContainer>
+
+        <PopUp trigger={buttonPopUp} setTrigger={setButtonPopUp} baseUrl={baseURL} movieId={movieId}>
+          <div style={{display: "flex"}}>
+            <FontAwesomeIcon icon={faPenToSquare} style={{color:'#FF9C07', margin:'0 10px 0 0', paddingBottom:'3px', fontSize:'50px'}}></FontAwesomeIcon>
+            <h1 style={{color: "white", marginTop:"9px"}}>Need to Change?</h1>
+          </div>
+        </PopUp>
         </div>
     )
     }
