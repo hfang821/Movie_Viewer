@@ -5,10 +5,10 @@ import Content from '../components/Content';
 export default function Main() {
 
     return (
-        <section className="main">
+        <div className="main">
             <Nav />
             <Content />
-        </section>
+        </div>
     )
 }
  
