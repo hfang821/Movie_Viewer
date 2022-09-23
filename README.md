@@ -48,7 +48,8 @@ Demonstration of the Project Management:
 
 
 ## Future Improvement
-1. Include a hamberger button in the Nav bar for linking to other pages.
+1. Include a hamburger button in the Nav bar for linking to other pages.
 2. Develop a "Contact" page for any technical issue.
 3. Styles on buttons. (Hovering effects, etc)
-4. Deploy on a Hosting Platform (Heroku, AWS Or Netlify)
+4. Media Queries. (Styling for different screen sizes)
+5. Deploy on a Hosting Platform (Heroku, AWS Or Netlify)
