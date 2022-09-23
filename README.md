@@ -6,6 +6,7 @@ Full-Stack application that helps friends and family to add/update their list of
 * Choose a clone option from the "Movie_Viewer" repository (either HTTPS or SSH should work)
 * In Gitbash, type "git clone HTTPS or SSH"
 * Once the clone is successful, navigate to the root directory of this repo.
+* Enter `npm install` into the terminal to install `concurrently` for running both front & back ends.
 * Enter `npm run install` into the terminal to install all dependencies linked in the `package.json` file (both client and server sides).
 
 ## How to Use:
